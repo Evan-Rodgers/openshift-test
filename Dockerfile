@@ -3,9 +3,9 @@ FROM node:alpine3.10 as build-step
 RUN mkdir /app
 WORKDIR /app
 
-COPY package.json /app
+COPY client/package.json /app
 RUN npm install
-COPY . /app
+COPY client /app
 
 RUN npm run build
 
